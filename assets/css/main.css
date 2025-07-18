@@ -268,3 +268,117 @@ footer {
     max-height: 240px;
   }
 }
+
+/* Responsive container and cards */
+@media (max-width: 700px) {
+  .container,
+  .profile-card,
+  .profile-card.large,
+  .art-entry,
+  .tag-cloud {
+    padding: 1rem 0.5rem;
+    max-width: 98vw;
+  }
+  .explore-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    max-width: 98vw;
+  }
+  .explore-card img {
+    height: 110px;
+  }
+  .explore-card {
+    min-height: 130px;
+  }
+  .profile-card .profile-pic {
+    width: 120px;
+    height: 120px;
+  }
+  .art-main-image {
+    max-height: 180px;
+  }
+}
+
+@media (max-width: 480px) {
+  .explore-grid {
+    grid-template-columns: 1fr;
+  }
+  .profile-card,
+  .profile-card.large,
+  .art-entry,
+  .tag-cloud {
+    padding: 0.5rem 0.2rem;
+  }
+  .profile-card .profile-pic {
+    width: 80px;
+    height: 80px;
+  }
+  .art-main-image {
+    max-height: 120px;
+  }
+  nav a {
+    font-size: 0.95rem;
+    margin: 0 0.4rem;
+  }
+  header h1 {
+    font-size: 1.1rem;
+  }
+  .explore-card img {
+    height: 90px;
+  }
+  .explore-card {
+    min-height: 110px;
+  }
+}
+
+/* Make tag labels wrap and shrink on mobile */
+@media (max-width: 600px) {
+  .tag-label {
+    font-size: 0.85rem;
+    padding: 0.25em 0.7em;
+    margin: 0.15rem 0.2rem 0.15rem 0;
+  }
+}
+
+/* Mobile nav styles */
+.mobile-nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: #fff;
+  position: absolute;
+  top: 0.5rem;
+  right: 1.2rem;
+  z-index: 1001;
+  cursor: pointer;
+}
+@media (max-width: 700px) {
+  nav {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(24,26,27,0.97);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  }
+  nav.open {
+    display: flex;
+  }
+  nav a {
+    display: block;
+    margin: 1.2rem 0;
+    font-size: 1.4rem;
+  }
+  .mobile-nav-toggle {
+    display: block;
+  }
+  header {
+    position: relative;
+  }
+}

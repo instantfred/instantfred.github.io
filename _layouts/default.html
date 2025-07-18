@@ -5,11 +5,16 @@
   <title>{{ page.title }} | {{ site.title }}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+  <link rel="icon" type="image/x-icon" href="{{ '/favicon.ico' | relative_url }}">
   <link href="https://fonts.googleapis.com/css?family=Inter:400,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
   <header>
+    <button class="mobile-nav-toggle" aria-label="Open navigation" aria-expanded="false">
+      <i class="fas fa-bars"></i>
+    </button>
+    <h1>{{ site.title }}</h1>
     <nav>
       <a href="/" {% if page.url == '/' %}class="active"{% endif %}>Home</a>
       <a href="/blog/" {% if page.url contains '/blog/' %}class="active"{% endif %}>Blog</a>
@@ -22,7 +27,27 @@
     {{ content }}
   </div>
   <footer>
-    &copy; {{ site.time | date: '%Y' }}. Crafted with Jekyll by <a href="https://github.com/instantfred">instantfred</a>.
+    &copy; {{ site.time | date: '%Y' }} {{ site.title }}. Crafted with Jekyll by <a href="https://github.com/instantfred">instantfred</a>.
   </footer>
+  <script>
+    const nav = document.querySelector('nav');
+    const toggle = document.querySelector('.mobile-nav-toggle');
+    if (toggle && nav) {
+      toggle.addEventListener('click', function() {
+        nav.classList.toggle('open');
+        const expanded = nav.classList.contains('open');
+        toggle.setAttribute('aria-expanded', expanded);
+        document.body.style.overflow = expanded ? 'hidden' : '';
+      });
+      // Close nav on link click (mobile)
+      nav.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          nav.classList.remove('open');
+          toggle.setAttribute('aria-expanded', false);
+          document.body.style.overflow = '';
+        });
+      });
+    }
+  </script>
 </body>
 </html>
