@@ -1,0 +1,7 @@
+{% for tag in site.tags %}
+  ---
+  layout: tag
+  tag: "{{ tag[0] }}"
+  permalink: "/tags/{{ tag[0] | uri_escape }}/"
+  ---
+{% endfor %} 
