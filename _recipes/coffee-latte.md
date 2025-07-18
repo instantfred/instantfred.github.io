@@ -1,7 +1,7 @@
 ---
 title: Coffee Latte
 date: 2025-07-08
-layout: recipe
+layout: default
 excerpt: "A simple and delicious coffee latte recipe."
 ---
 

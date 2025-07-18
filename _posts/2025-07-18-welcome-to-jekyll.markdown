@@ -3,7 +3,7 @@ layout: post
 title: "Welcome to My Digital Space"
 date: 2025-07-18 10:00:00 -0600
 categories: personal introduction
-tags: [welcome, introduction, goals]
+tags: [introduction]
 ---
 
 Hello and welcome to my blog! I'm excited to share this space with you where I'll be documenting my journey as a developer and drawing enthusiast.
