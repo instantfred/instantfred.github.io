@@ -1,0 +1,63 @@
+/* assets/main.css */
+body {
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+  background: #f8f9fb;
+  color: #222;
+  margin: 0;
+  padding: 0;
+}
+
+header, nav {
+  background: #181a1b;
+  color: #fff;
+  padding: 1.5rem 0;
+  text-align: center;
+}
+
+a {
+  color: #1fa2ff;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+a:hover {
+  color: #0d8ddb;
+}
+
+.container {
+  max-width: 800px;
+  margin: 2rem auto;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  padding: 2rem;
+}
+
+.card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  margin-bottom: 1.5rem;
+  padding: 1.5rem;
+}
+
+h1, h2, h3 {
+  font-weight: 700;
+  color: #181a1b;
+}
+
+nav a {
+  margin: 0 1rem;
+  color: #fff;
+  font-weight: 500;
+}
+
+nav a.active, nav a:hover {
+  color: #1fa2ff;
+}
+
+footer {
+  text-align: center;
+  color: #888;
+  padding: 2rem 0 1rem 0;
+  font-size: 0.95em;
+}
