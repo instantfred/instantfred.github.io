@@ -139,32 +139,49 @@ footer {
 .explore-card {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: stretch;
   background: #fff;
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.06);
   text-decoration: none;
   color: #181a1b;
-  padding: 1rem 0.5rem 0.7rem 0.5rem;
+  padding: 0;
+  overflow: hidden;
   transition: box-shadow 0.2s, transform 0.2s;
+  min-height: 180px;
+  position: relative;
 }
 .explore-card:hover {
   box-shadow: 0 4px 16px rgba(31,162,255,0.13);
   transform: translateY(-4px) scale(1.03);
 }
 .explore-card img {
-  width: 90px;
-  height: 90px;
+  width: 100%;
+  height: 140px;
   object-fit: cover;
-  border-radius: 10px;
-  margin-bottom: 0.7rem;
+  display: block;
 }
-.explore-card span {
+.explore-label {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0.7em 0;
   font-size: 1.1rem;
   font-weight: 600;
-  color: #1fa2ff;
+  color: #fff;
   letter-spacing: 0.5px;
+  text-align: center;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  background: #1fa2ff;
+  z-index: 2;
+  transition: background 0.2s;
 }
+.explore-card:nth-child(1) .explore-label { background: #1fa2ff; }
+.explore-card:nth-child(2) .explore-label { background: #ffb347; }
+.explore-card:nth-child(3) .explore-label { background: #77dd77; }
+.explore-card:nth-child(4) .explore-label { background: #ff6961; }
 
 .tag-cloud {
   max-width: 700px;

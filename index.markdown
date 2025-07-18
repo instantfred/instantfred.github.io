@@ -18,19 +18,19 @@ permalink: /
 <div class="explore-grid">
   <a href="/blog/" class="explore-card">
     <img src="/assets/images/explore-blog.jpeg" alt="Blog">
-    <span>Blog</span>
+    <span class="explore-label">Blog</span>
   </a>
   <a href="/projects/" class="explore-card">
     <img src="/assets/images/explore-projects.jpg" alt="Projects">
-    <span>Projects</span>
+    <span class="explore-label">Projects</span>
   </a>
   <a href="/art/" class="explore-card">
     <img src="/assets/images/explore-art.jpg" alt="Art">
-    <span>Illustrations</span>
+    <span class="explore-label">Illustrations</span>
   </a>
   <a href="/recipes/" class="explore-card">
     <img src="/assets/images/explore-recipes.jpg" alt="Recipes">
-    <span>Recipes</span>
+    <span class="explore-label">Recipes</span>
   </a>
 </div>
 
