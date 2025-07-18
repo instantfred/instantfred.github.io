@@ -1,0 +1,21 @@
+---
+layout: default
+---
+
+<article class="art-entry">
+  {% if page.image %}
+    <div class="art-image-wrapper">
+      <img src="{{ page.image }}" alt="{{ page.title }}" class="art-main-image">
+    </div>
+  {% endif %}
+  <header class="art-header">
+    <h1>{{ page.title }}</h1>
+    <p class="art-meta">
+      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %d, %Y" }}</time>
+      {% if page.excerpt %}<span class="art-excerpt">{{ page.excerpt }}</span>{% endif %}
+    </p>
+  </header>
+  <div class="art-content">
+    {{ content }}
+  </div>
+</article> 
