@@ -1,0 +1,60 @@
+---
+# Front matter required for Jekyll to process
+---
+
+@import "minima";
+
+// Custom variables
+$brand-color: #2c3e50;
+$text-color: #333;
+$background-color: #fdfdfd;
+
+// Custom styles
+.site-header {
+  background-color: $brand-color;
+  .site-title {
+    color: white;
+    &:hover {
+      color: #ecf0f1;
+    }
+  }
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.project-card {
+  border: 1px solid #e1e8ed;
+  border-radius: 8px;
+  padding: 1.5rem;
+  transition: transform 0.2s ease;
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+}
+
+.tech-stack {
+  margin-top: 2rem;
+  
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    list-style: none;
+    padding: 0;
+  }
+  
+  li {
+    background-color: #f8f9fa;
+    padding: 0.25rem 0.75rem;
+    border-radius: 1rem;
+    font-size: 0.875rem;
+    color: $brand-color;
+  }
+}
