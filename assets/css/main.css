@@ -400,3 +400,32 @@ footer {
 .tag-list .card {
   margin-bottom: 1.5rem;
 }
+
+.card, .art-entry, .tag-page {
+  background: #fff;
+}
+.card h2, .art-header h1, .tag-page h1, .post-title{
+  color: #1fa2ff;
+  font-weight: 700;
+}
+
+/* Code block styling */
+pre, code {
+  font-family: 'Fira Mono', 'Consolas', 'Menlo', monospace;
+}
+pre {
+  background: #f6f8fa;
+  color: #222;
+  border-radius: 8px;
+  padding: 1em 1.2em;
+  overflow-x: auto;
+  margin: 1.2em 0;
+  font-size: 1em;
+}
+code {
+  background: #f6f8fa;
+  color: #c7254e;
+  border-radius: 4px;
+  padding: 0.15em 0.4em;
+  font-size: 0.98em;
+}
