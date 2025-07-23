@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "How This Blog Was Built: A Jekyll Guide for Beginners"
-date: 2024-07-21 10:00:00 -0600
+date: 2025-07-21 10:00:00 -0600
 categories: jekyll guide
 excerpt: "A complete beginner's guide to building a personal blog with Jekyll and GitHub Pages, including all the commands and concepts you need."
 tags: [jekyll, guide, tutorial]
@@ -50,7 +50,6 @@ jekyll new myblog
 cd myblog
 ```
 
-
 This creates a new folder with all the files you need. You should see a directory structure like this:
 
 ```text
@@ -65,6 +64,7 @@ myblog/
 ├── about.markdown
 ├── index.markdown
 ```
+
 index.markdown is pretty much your home page, the landing page of your blog.
 
 ## Step 3: Run Your Site Locally
@@ -118,4 +118,5 @@ git push -u origin main
 - Explore Jekyll plugins for more features.
 - By default the setup uses jekyll's minimal theme, but you can find lots of nice themes in [Jekyll Themes](https://jekyllthemes.io/free)
 
-If you have questions, check out the [Jekyll documentation](https://jekyllrb.com/docs/) or reach out to me! 
+If you have questions, check out the [Jekyll documentation](https://jekyllrb.com/docs/) or reach out to me!
+
