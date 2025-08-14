@@ -18,7 +18,7 @@ Lately, I've been getting more serious about my coffee—not just drinking it, b
 So I decided to start keeping a **coffee brewing log** using a simple markdown template in [Joplin](https://joplinapp.org/). It's basically a structured form where I jot down all the details:
 
 - ☕ Bean origin & roast date
-- ⚖️ Grind size & brewing method  
+- ⚖️ Grind size & brewing method
 - 🌡️ Water temperature & timing
 - 👅 Detailed tasting notes
 
@@ -28,8 +28,8 @@ Being able to see exactly what I did for each cup is where the magic happens.
 
 Now, instead of guessing, I can look back and say:
 
-- *"Ah, this Ethiopian brew at 94°C with a medium-fine grind was **chef's kiss**"* 
-- *"Hmm, maybe that bloom time was too long"*
+- _"Ah, this Ethiopian brew at 94°C with a medium-fine grind was **chef's kiss**"_
+- _"Hmm, maybe that bloom time was too long"_
 
 It's like having a **roadmap of my coffee journey**—each entry helps me fine-tune the next one.
 
@@ -38,7 +38,7 @@ It's like having a **roadmap of my coffee journey**—each entry helps me fine-t
 ✅ **My coffee has actually gotten better**  
 ✅ **I'm spotting patterns** in what works for certain beans  
 ✅ **Small tweaks** lead to huge flavor improvements  
-✅ **It's genuinely fun** to see how my notes evolve over time  
+✅ **It's genuinely fun** to see how my notes evolve over time
 
 ## Ready to Level Up Your Coffee Game? 🚀
 
@@ -48,51 +48,57 @@ Since I use Joplin as my note-taking app, I asked ChatGPT to create a markdown t
 
 ## 📋 Coffee Brewing Template
 
-*Copy this template and fill in the placeholders with your brewing details:*
+_Copy this template and fill in the placeholders with your brewing details:_
 
 ```markdown
 ### Coffee Details
-- **Coffee:** {{Coffee Name}} ({{Roaster}}) — {{Origin / Process}}
-- **Roast date:** {{YYYY-MM-DD}}
-- **Dose (coffee):** {{grams}} g
-- **Grind:** {{Grinder}} — setting {{value}} ({{coarseness description}})
-- **Ratio:** 1:{{ratio}}
-- **Water:** {{grams}} g total at {{temperature}}°C ({{water source}})
-- **Target yield:** {{grams}} g in cup
-- **Target time:** {{mm}}:{{ss}}
-- **Equipment:** {{Brewer}}, {{Filter type}}, Kettle {{model}}, Scale {{model}}
+
+- **Coffee:** [Coffee Name] ([Roaster]) — [Origin / Process]
+- **Roast date:** [YYYY-MM-DD]
+- **Dose (coffee):** [grams] g
+- **Grind:** [Grinder] — setting [value] ([coarseness description])
+- **Ratio:** 1:[ratio]
+- **Water:** [grams] g total at [temperature]°C ([water source]])
+- **Target yield:** [grams] g in cup
+- **Target time:** [mm]:[ss]
+- **Equipment:** [Brewer], [Filter type], Kettle [model], Scale [model]
 
 ### Brewing Steps
 
 #### 1) Prep
+
 - Rinse and preheat brewer and cup
-- Add {{Dose}} g coffee; settle bed and make a small well
+- Add [Dose] g coffee; settle bed and make a small well
 
 #### 2) Bloom
-- Pour {{bloom_water}} g (≈2–3x dose) at {{temperature}}°C
-- Swirl or gently stir to saturate. Bloom {{bloom_time}} s
+
+- Pour [bloom_water] g (≈2–3x dose) at [temperature]°C
+- Swirl or gently stir to saturate. Bloom [bloom_time] s
 
 #### 3) Main pours
-- **Pour pattern:** {{continuous or pulse pours}}
-- **Pour(s):** {{e.g., 60 g to 60s, then 60 g every 30s until {{total_water}} g}}
-- **Agitation:** {{swirl/stir/none}}
+
+- **Pour pattern:** [continuous or pulse pours]
+- **Pour(s):** [e.g., 60 g to 60s, then 60 g every 30s until [total_water] g]
+- **Agitation:** [swirl/stir/none]
 
 #### 4) Drawdown
-- **Target bed flatness:** {{flat / slight dome}}
-- **Finish time:** {{mm}}:{{ss}}
+
+- **Target bed flatness:** [flat / slight dome]
+- **Finish time:** [mm]:[ss]
 
 ### Tasting Notes & Adjustments
-- **Grind adjustments:** {{notes}}
-- **Taste:** {{aromatics, acidity, sweetness, body, finish}}
-- **Next time:** {{what to tweak}}
+
+- **Grind adjustments:** [notes]
+- **Taste:** [aromatics, acidity, sweetness, body, finish]
+- **Next time:** [what to tweak]
 ```
 
 ## 📝 Example: V60 Brew (1:16 ratio, 18g dose)
 
-*Here's how the template looks when filled out for an actual brew:*
-
+_Here's how the template looks when filled out for an actual brew:_
 
 ### Coffee Details
+
 - **Coffee:** Ethiopia Guji (Sample Roaster) — Washed
 - **Roast date:** 2025-08-10
 - **Dose (coffee):** 18 g
@@ -106,24 +112,29 @@ Since I use Joplin as my note-taking app, I asked ChatGPT to create a markdown t
 ### Brewing Steps
 
 #### 1) Prep
+
 - Rinse filter; preheat brewer and cup
 - Add 18 g coffee; tap to level and make a small well
 
 #### 2) Bloom
+
 - **0:00** — Pour 45 g, swirl to saturate
 - **Bloom time:** 35 seconds
 
 #### 3) Main pours
+
 - **0:35** — Pour to 120 g in slow spiral; light center pour to settle
 - **1:10** — Pour to 210 g
 - **1:45** — Pour to 300 g
 - **Agitation:** Gentle swirl after final pour, no stirring
 
 #### 4) Drawdown
+
 - **Target:** Flat bed, finish around 2:50
 - **Note:** If over 3:10, coarsen grind next time
 
 ### Tasting Notes & Adjustments
+
 - **Taste:** 🌸 Floral aromatics, 🍋 lemon acidity, 🍯 honey sweetness, medium body, clean finish
 - **Next time:** Try 94°C for more clarity; if sour, extend bloom to 45s
 
@@ -131,6 +142,7 @@ Since I use Joplin as my note-taking app, I asked ChatGPT to create a markdown t
 
 ## Start Your Coffee Journey Today ☕
 
-Give this template a try and see how it transforms your brewing! Each log entry becomes a stepping stone to your perfect cup. 
+Give this template a try and see how it transforms your brewing! Each log entry becomes a stepping stone to your perfect cup.
 
 **Pro tip:** Don't worry about getting everything perfect at first—the beauty is in the journey of discovery. Happy brewing! 🎯
+
