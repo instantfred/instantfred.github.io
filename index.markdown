@@ -1,17 +1,25 @@
 ---
-layout: page
+layout: default
 title: instantfred
 permalink: /
+flush: true
 ---
 
-<div class="profile-card large">
-  <picture>
-    <source srcset="/assets/images/profile.webp" type="image/webp">
-    <img src="/assets/images/profile.jpg" alt="Freddy's profile picture" class="profile-pic" width="420" height="417" decoding="async">
-  </picture>
-  <h2>Hi, I'm Freddy</h2>
-  <p>Developer, creative, and coffee enthusiast. Welcome to my digital space where I share my journey as a developer, showcase my illustrations, share coffee recipes, and document coding projects.</p>
-  <div class="profile-links">
+<section class="hero">
+  <div class="hero-avatar">
+    <picture>
+      <source srcset="/assets/images/profile.webp" type="image/webp">
+      <img src="/assets/images/profile.jpg" alt="Freddy's profile picture" width="420" height="417" decoding="async">
+    </picture>
+  </div>
+  <h1 class="hero-title">Hi, I'm Freddy <span class="wave">👋</span></h1>
+  <p class="hero-tagline">Developer, illustrator &amp; coffee enthusiast</p>
+  <p class="hero-bio">Welcome to my digital space, where I share my journey as a developer, showcase my illustrations, brew specialty coffee, and document coding projects.</p>
+  <div class="hero-actions">
+    <a class="btn btn-primary" href="/projects/">View projects</a>
+    <a class="btn btn-ghost" href="/blog/">Read the blog</a>
+  </div>
+  <div class="social-links">
     <a href="mailto:devfreddy@duck.com" title="Email" aria-label="Email">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
         <rect x="2" y="4" width="20" height="16" rx="2"></rect>
@@ -29,40 +37,42 @@ permalink: /
       </svg>
     </a>
   </div>
-</div>
+</section>
 
-<div class="explore-grid">
-  <a href="/blog/" class="explore-card">
-    <picture>
-      <source srcset="/assets/images/explore-blog.webp" type="image/webp">
-      <img src="/assets/images/explore-blog.jpg" alt="Blog" width="474" height="253" loading="lazy" decoding="async">
-    </picture>
-    <span class="explore-label">Blog</span>
-  </a>
-  <a href="/projects/" class="explore-card">
-    <picture>
-      <source srcset="/assets/images/explore-projects.webp" type="image/webp">
-      <img src="/assets/images/explore-projects.jpg" alt="Projects" width="680" height="454" loading="lazy" decoding="async">
-    </picture>
-    <span class="explore-label">Projects</span>
-  </a>
-  <a href="/hobbies/" class="explore-card">
-    <picture>
-      <source srcset="/assets/images/explore-art.webp" type="image/webp">
-      <img src="/assets/images/explore-art.jpg" alt="Hobbies" width="680" height="453" loading="lazy" decoding="async">
-    </picture>
-    <span class="explore-label">Hobbies</span>
-  </a>
-</div>
+<section class="explore">
+  <h2 class="section-title">Explore</h2>
+  <div class="explore-grid">
+    <a href="/blog/" class="explore-card">
+      <picture>
+        <source srcset="/assets/images/explore-blog.webp" type="image/webp">
+        <img src="/assets/images/explore-blog.jpg" alt="" width="474" height="253" loading="lazy" decoding="async">
+      </picture>
+      <span class="explore-label">Blog <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12,5 19,12 12,19"></polyline></svg></span>
+    </a>
+    <a href="/projects/" class="explore-card">
+      <picture>
+        <source srcset="/assets/images/explore-projects.webp" type="image/webp">
+        <img src="/assets/images/explore-projects.jpg" alt="" width="680" height="454" loading="lazy" decoding="async">
+      </picture>
+      <span class="explore-label">Projects <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12,5 19,12 12,19"></polyline></svg></span>
+    </a>
+    <a href="/hobbies/" class="explore-card">
+      <picture>
+        <source srcset="/assets/images/explore-art.webp" type="image/webp">
+        <img src="/assets/images/explore-art.jpg" alt="" width="680" height="453" loading="lazy" decoding="async">
+      </picture>
+      <span class="explore-label">Hobbies <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12,5 19,12 12,19"></polyline></svg></span>
+    </a>
+  </div>
+</section>
 
-<div class="tag-cloud">
-  <h3>Tags</h3>
-  {% assign tag_colors = "#1fa2ff,#ffb347,#ff6961,#77dd77,#f49ac2,#aec6cf,#b39eb5,#ffcccb,#cfcfc4,#fdfd96" | split: "," %}
-  {% assign color_index = 0 %}
-  {% for tag in site.tags %}
-    {% assign color = tag_colors[color_index] %}
-    <a class="tag-label" style="background-color: {{ color }};" href="/tags/{{ tag[0] | slugify }}/">{{ tag[0] }}</a>
-    {% assign color_index = color_index | plus: 1 %}
-    {% if color_index == tag_colors.size %}{% assign color_index = 0 %}{% endif %}
-  {% endfor %}
-</div>
+{% if site.tags.size > 0 %}
+<section class="tags-section">
+  <h2 class="section-title">Tags</h2>
+  <div class="tag-cloud">
+    {% for tag in site.tags %}
+      <a class="tag-label" href="/tags/{{ tag[0] | slugify }}/">{{ tag[0] }}</a>
+    {% endfor %}
+  </div>
+</section>
+{% endif %}
