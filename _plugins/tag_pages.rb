@@ -29,6 +29,7 @@ module Jekyll
         "layout" => "tag",
         "tag"    => tag,
         "title"  => "Tag: #{tag}",
+        "flush"  => true,
       }
     end
   end

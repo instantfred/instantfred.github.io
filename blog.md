@@ -2,15 +2,20 @@
 layout: default
 title: Blog
 permalink: /blog/
+flush: true
 ---
 
-<h1>Blog</h1>
-<ul>
+<header class="page-header">
+  <h1>Blog</h1>
+  <p class="page-lead">Notes on development, projects and things I'm learning.</p>
+</header>
+
+<div class="entry-list">
   {% for post in site.posts %}
-    <li>
-      <a href="{{ post.url }}">{{ post.title }}</a>
-      <span>({{ post.date | date: "%Y-%m-%d" }})</span>
-      <p>{{ post.excerpt }}</p>
-    </li>
+  <a class="entry-card" href="{{ post.url }}">
+    <h2>{{ post.title }}</h2>
+    <span class="entry-date">{{ post.date | date: "%B %-d, %Y" }}</span>
+    {% if post.excerpt %}<p>{{ post.excerpt | strip_html | truncate: 160 }}</p>{% endif %}
+  </a>
   {% endfor %}
-</ul> 
+</div>

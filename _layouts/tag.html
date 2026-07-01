@@ -3,24 +3,25 @@ layout: default
 title: "Tag: {{ page.tag }}"
 ---
 
-<div class="tag-page">
-  <h1>Tag: {{ page.tag }}</h1>
-  <div class="tag-list">
-    {% assign tag = page.tag %}
-    {% assign posts = site.posts | where_exp: "item", "item.tags contains tag" %}
-    {% assign hobbies = site.hobbies | where_exp: "item", "item.tags contains tag" %}
-    {% assign all_items = posts | concat: hobbies %}
-    {% assign all_items = all_items | sort: 'date' | reverse %}
-    {% if all_items.size == 0 %}
-      <p>No entries found for this tag.</p>
-    {% else %}
-      {% for item in all_items %}
-        <div class="card">
-          <h2><a href="{{ item.url }}">{{ item.title }}</a></h2>
-          <span>{{ item.date | date: "%Y-%m-%d" }}</span>
-          <p>{{ item.excerpt }}</p>
-        </div>
-      {% endfor %}
-    {% endif %}
-  </div>
-</div> 
+<a class="back-link" href="/">← Home</a>
+<header class="page-header">
+  <h1>Tagged &ldquo;{{ page.tag }}&rdquo;</h1>
+</header>
+
+<div class="entry-list">
+  {% assign tag = page.tag %}
+  {% assign posts = site.posts | where_exp: "item", "item.tags contains tag" %}
+  {% assign hobbies = site.hobbies | where_exp: "item", "item.tags contains tag" %}
+  {% assign all_items = posts | concat: hobbies | sort: 'date' | reverse %}
+  {% if all_items.size == 0 %}
+    <p>No entries found for this tag.</p>
+  {% else %}
+    {% for item in all_items %}
+    <a class="entry-card" href="{{ item.url }}">
+      <h2>{{ item.title }}</h2>
+      <span class="entry-date">{{ item.date | date: "%B %-d, %Y" }}</span>
+      {% if item.excerpt %}<p>{{ item.excerpt | strip_html | truncate: 160 }}</p>{% endif %}
+    </a>
+    {% endfor %}
+  {% endif %}
+</div>

@@ -2,10 +2,13 @@
 layout: default
 title: Hobbies
 permalink: /hobbies/
+flush: true
 ---
 
-<h1>Hobbies</h1>
-<p>Things I do when I'm not writing code: brewing specialty coffee, playing board games, and drawing.</p>
+<header class="page-header">
+  <h1>Hobbies</h1>
+  <p class="page-lead">Things I do when I'm not writing code: brewing specialty coffee, playing board games, and drawing.</p>
+</header>
 
 {% for cat in site.data.hobby_categories %}
   {% assign items = site.hobbies | where: "category", cat.slug | sort: "date" | reverse %}
