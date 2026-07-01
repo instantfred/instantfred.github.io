@@ -52,7 +52,7 @@ defaults:
   - scope:
       path: ""
     values:
-      image: /assets/images/profile.png
+      image: /assets/images/profile.jpg
 
 # Exclude from processing.
 # The following items will not be processed, by default.

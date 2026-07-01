@@ -5,7 +5,10 @@ permalink: /
 ---
 
 <div class="profile-card large">
-  <img src="/assets/images/profile.png" alt="Freddy's profile picture" class="profile-pic">
+  <picture>
+    <source srcset="/assets/images/profile.webp" type="image/webp">
+    <img src="/assets/images/profile.jpg" alt="Freddy's profile picture" class="profile-pic" width="420" height="417" decoding="async">
+  </picture>
   <h2>Hi, I'm Freddy</h2>
   <p>Developer, creative, and coffee enthusiast. Welcome to my digital space where I share my journey as a developer, showcase my illustrations, share coffee recipes, and document coding projects.</p>
   <div class="profile-links">
@@ -30,19 +33,31 @@ permalink: /
 
 <div class="explore-grid">
   <a href="/blog/" class="explore-card">
-    <img src="/assets/images/explore-blog.jpeg" alt="Blog">
+    <picture>
+      <source srcset="/assets/images/explore-blog.webp" type="image/webp">
+      <img src="/assets/images/explore-blog.jpg" alt="Blog" width="474" height="253" loading="lazy" decoding="async">
+    </picture>
     <span class="explore-label">Blog</span>
   </a>
   <a href="/projects/" class="explore-card">
-    <img src="/assets/images/explore-projects.jpg" alt="Projects">
+    <picture>
+      <source srcset="/assets/images/explore-projects.webp" type="image/webp">
+      <img src="/assets/images/explore-projects.jpg" alt="Projects" width="680" height="454" loading="lazy" decoding="async">
+    </picture>
     <span class="explore-label">Projects</span>
   </a>
   <a href="/art/" class="explore-card">
-    <img src="/assets/images/explore-art.jpg" alt="Art">
+    <picture>
+      <source srcset="/assets/images/explore-art.webp" type="image/webp">
+      <img src="/assets/images/explore-art.jpg" alt="Art" width="680" height="453" loading="lazy" decoding="async">
+    </picture>
     <span class="explore-label">Illustrations</span>
   </a>
   <a href="/recipes/" class="explore-card">
-    <img src="/assets/images/explore-recipes.jpg" alt="Recipes">
+    <picture>
+      <source srcset="/assets/images/explore-recipes.webp" type="image/webp">
+      <img src="/assets/images/explore-recipes.jpg" alt="Recipes" width="680" height="453" loading="lazy" decoding="async">
+    </picture>
     <span class="explore-label">Recipes</span>
   </a>
 </div>
