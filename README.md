@@ -6,8 +6,8 @@ Welcome to my digital space where I share my journey as a developer, showcase my
 
 ### Prerequisites
 
-- Ruby (version 2.7 or higher)
-- Bundler gem
+- Ruby 4.0.x (pinned in `.ruby-version`; install with a version manager like [rbenv](https://github.com/rbenv/rbenv) or [mise](https://mise.jdx.dev/))
+- Bundler (ships with Ruby 4)
 
 ### Installation
 
