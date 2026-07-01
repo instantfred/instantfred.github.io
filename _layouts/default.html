@@ -4,6 +4,19 @@
   <meta charset="UTF-8">
   <title>{{ page.title }} | {{ site.title }}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#181a1b">
+  <script>
+    // Set the theme before first paint to avoid a flash of the wrong colors.
+    (function () {
+      try {
+        var stored = localStorage.getItem('theme');
+        var theme = stored || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (e) {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    })();
+  </script>
   <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
   <link rel="icon" type="image/x-icon" href="{{ '/favicon.ico' | relative_url }}">
   <link href="https://fonts.googleapis.com/css?family=Inter:400,700&display=swap" rel="stylesheet">
@@ -13,6 +26,22 @@
   <header>
     <button class="mobile-nav-toggle" aria-label="Open navigation" aria-expanded="false">
       <i class="fas fa-bars"></i>
+    </button>
+    <button class="theme-toggle" aria-label="Toggle dark mode">
+      <svg class="icon-moon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+      </svg>
+      <svg class="icon-sun" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <circle cx="12" cy="12" r="5"></circle>
+        <line x1="12" y1="1" x2="12" y2="3"></line>
+        <line x1="12" y1="21" x2="12" y2="23"></line>
+        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+        <line x1="1" y1="12" x2="3" y2="12"></line>
+        <line x1="21" y1="12" x2="23" y2="12"></line>
+        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+      </svg>
     </button>
     <nav>
       <a href="/" {% if page.url == '/' %}class="active"{% endif %}>Home</a>
@@ -29,6 +58,24 @@
     &copy; {{ site.time | date: '%Y' }} {{ site.title }}. Crafted with Jekyll by <a href="https://github.com/instantfred">instantfred</a>.
   </footer>
   <script>
+    // Dark-mode toggle: persist an explicit choice, otherwise follow the system.
+    (function () {
+      const root = document.documentElement;
+      const themeToggle = document.querySelector('.theme-toggle');
+      if (themeToggle) {
+        themeToggle.addEventListener('click', function () {
+          const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+          root.setAttribute('data-theme', next);
+          try { localStorage.setItem('theme', next); } catch (e) {}
+        });
+      }
+      // Follow OS changes only while the user hasn't picked a theme explicitly.
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function (e) {
+        try { if (localStorage.getItem('theme')) return; } catch (err) {}
+        root.setAttribute('data-theme', e.matches ? 'dark' : 'light');
+      });
+    })();
+
     const nav = document.querySelector('nav');
     const toggle = document.querySelector('.mobile-nav-toggle');
     if (toggle && nav) {

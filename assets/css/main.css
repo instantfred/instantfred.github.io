@@ -1,17 +1,72 @@
 /* assets/main.css */
+
+/* Theme tokens. Light is the default; dark overrides live below.
+   The <html data-theme> attribute is set before paint by an inline
+   script in the layout, so there is no flash of the wrong colors. */
+:root {
+  --bg: #f8f9fb;
+  --surface: #ffffff;
+  --surface-alt: #f6f8fa;
+  --text: #222222;
+  --text-soft: #444444;
+  --text-muted: #888888;
+  --heading: #181a1b;
+  --accent: #1fa2ff;
+  --accent-hover: #0d8ddb;
+  --header-bg: #181a1b;
+  --header-text: #ffffff;
+  --nav-overlay: rgba(24, 26, 27, 0.97);
+  --code-text: #c7254e;
+  --shadow-sm: 0 1px 4px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 2px 8px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 2px 12px rgba(0, 0, 0, 0.07);
+  --shadow-accent: 0 4px 16px rgba(31, 162, 255, 0.13);
+  --shadow-pic: 0 1px 6px rgba(31, 162, 255, 0.12);
+  --shadow-img: 0 2px 12px rgba(31, 162, 255, 0.10);
+  color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+  --bg: #0f1113;
+  --surface: #1a1d21;
+  --surface-alt: #23272c;
+  --text: #e4e6e8;
+  --text-soft: #c2c6ca;
+  --text-muted: #9098a0;
+  --heading: #f2f4f6;
+  --accent: #4db5ff;
+  --accent-hover: #7cc7ff;
+  --header-bg: #16181b;
+  --header-text: #f2f4f6;
+  --nav-overlay: rgba(10, 11, 12, 0.97);
+  --code-text: #ff8fab;
+  --shadow-sm: 0 1px 4px rgba(0, 0, 0, 0.5);
+  --shadow-md: 0 2px 8px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 2px 12px rgba(0, 0, 0, 0.55);
+  --shadow-accent: 0 4px 16px rgba(0, 0, 0, 0.6);
+  --shadow-pic: 0 1px 6px rgba(0, 0, 0, 0.5);
+  --shadow-img: 0 2px 12px rgba(0, 0, 0, 0.55);
+  color-scheme: dark;
+}
+
 body {
   font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
-  background: #f8f9fb;
-  color: #222;
+  background: var(--bg);
+  color: var(--text);
   margin: 0;
   padding: 0;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 header, nav {
-  background: #181a1b;
-  color: #fff;
+  background: var(--header-bg);
+  color: var(--header-text);
   padding: 0.7rem 0 0.5rem 0;
   text-align: center;
+}
+
+header {
+  position: relative;
 }
 
 header h1 {
@@ -20,60 +75,85 @@ header h1 {
 }
 
 a {
-  color: #1fa2ff;
+  color: var(--accent);
   text-decoration: none;
   transition: color 0.2s;
 }
 a:hover {
-  color: #0d8ddb;
+  color: var(--accent-hover);
 }
 
 .container {
   max-width: 800px;
   margin: 2rem auto;
-  background: #fff;
+  background: var(--surface);
   border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  box-shadow: var(--shadow-md);
   padding: 2rem;
+  transition: background 0.3s ease;
 }
 
 .card {
-  background: #fff;
+  background: var(--surface);
   border-radius: 10px;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  box-shadow: var(--shadow-sm);
   margin-bottom: 1.5rem;
   padding: 1.5rem;
 }
 
 h1, h2, h3 {
   font-weight: 700;
-  color: #181a1b;
+  color: var(--heading);
 }
 
 nav a {
   margin: 0 1rem;
-  color: #fff;
+  color: var(--header-text);
   font-weight: 500;
   font-size: 1.05rem;
 }
 
 nav a.active, nav a:hover {
-  color: #1fa2ff;
+  color: var(--accent);
 }
 
 footer {
   text-align: center;
-  color: #888;
+  color: var(--text-muted);
   padding: 2rem 0 1rem 0;
   font-size: 0.95em;
 }
 
+/* Dark-mode toggle button */
+.theme-toggle {
+  position: absolute;
+  top: 0.55rem;
+  right: 1.2rem;
+  z-index: 1001;
+  background: none;
+  border: none;
+  padding: 0.35rem;
+  line-height: 0;
+  border-radius: 8px;
+  color: var(--header-text);
+  cursor: pointer;
+  transition: color 0.2s, background 0.2s;
+}
+.theme-toggle:hover {
+  color: var(--accent);
+  background: rgba(255, 255, 255, 0.1);
+}
+.icon-sun { display: none; }
+.icon-moon { display: inline-block; }
+:root[data-theme="dark"] .icon-sun { display: inline-block; }
+:root[data-theme="dark"] .icon-moon { display: none; }
+
 .profile-card {
   max-width: 250px;
   margin: 2rem auto 2.5rem auto;
-  background: #fff;
+  background: var(--surface);
   border-radius: 16px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  box-shadow: var(--shadow-lg);
   padding: 2rem 1.5rem 1.5rem 1.5rem;
   text-align: center;
 }
@@ -82,28 +162,28 @@ footer {
   height: 210px;
   object-fit: cover;
   border-radius: 50%;
-  border: 3px solid #1fa2ff;
+  border: 3px solid var(--accent);
   margin-bottom: 1rem;
-  box-shadow: 0 1px 6px rgba(31,162,255,0.12);
+  box-shadow: var(--shadow-pic);
 }
 .profile-card h2 {
   margin: 0.5rem 0 0.5rem 0;
   font-size: 1.6rem;
-  color: #181a1b;
+  color: var(--heading);
 }
 .profile-card p {
-  color: #444;
+  color: var(--text-soft);
   font-size: 1.05rem;
   margin-bottom: 1.2rem;
 }
 .profile-links a {
-  color: #1fa2ff;
+  color: var(--accent);
   font-weight: 500;
   margin: 0 0.3rem;
   text-decoration: none;
 }
 .profile-links a:hover {
-  color: #0d8ddb;
+  color: var(--accent-hover);
   text-decoration: underline;
 }
 
@@ -118,11 +198,11 @@ footer {
   display: inline-block;
   margin: 0 0.5rem;
   font-size: 1.6rem;
-  color: #1fa2ff;
+  color: var(--accent);
   transition: color 0.2s, transform 0.2s;
 }
 .profile-card .profile-links a:hover {
-  color: #0d8ddb;
+  color: var(--accent-hover);
   transform: scale(1.15);
 }
 .profile-card .profile-links i {
@@ -140,11 +220,11 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  background: #fff;
+  background: var(--surface);
   border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  box-shadow: var(--shadow-md);
   text-decoration: none;
-  color: #181a1b;
+  color: var(--heading);
   padding: 0;
   overflow: hidden;
   transition: box-shadow 0.2s, transform 0.2s;
@@ -152,7 +232,7 @@ footer {
   position: relative;
 }
 .explore-card:hover {
-  box-shadow: 0 4px 16px rgba(31,162,255,0.13);
+  box-shadow: var(--shadow-accent);
   transform: translateY(-4px) scale(1.03);
 }
 .explore-card img {
@@ -187,15 +267,15 @@ footer {
   max-width: 700px;
   margin: 2.5rem auto 0 auto;
   padding: 1.2rem 1rem 1.2rem 1rem;
-  background: #fff;
+  background: var(--surface);
   border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  box-shadow: var(--shadow-md);
   text-align: center;
 }
 .tag-cloud h3 {
   margin-top: 0;
   margin-bottom: 1rem;
-  color: #181a1b;
+  color: var(--heading);
   font-size: 1.2rem;
   font-weight: 600;
   letter-spacing: 0.5px;
@@ -208,7 +288,7 @@ footer {
   color: #fff;
   font-size: 0.98rem;
   font-weight: 500;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.07);
   transition: transform 0.15s;
 }
 .tag-label:hover {
@@ -219,9 +299,9 @@ footer {
 .art-entry {
   max-width: 800px;
   margin: 2.5rem auto;
-  background: #fff;
+  background: var(--surface);
   border-radius: 14px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  box-shadow: var(--shadow-lg);
   padding: 2.5rem 2rem 2rem 2rem;
 }
 .art-image-wrapper {
@@ -232,7 +312,7 @@ footer {
   max-width: 100%;
   max-height: 480px;
   border-radius: 12px;
-  box-shadow: 0 2px 12px rgba(31,162,255,0.10);
+  box-shadow: var(--shadow-img);
   object-fit: contain;
 }
 .art-header {
@@ -242,22 +322,22 @@ footer {
 .art-header h1 {
   margin-bottom: 0.3rem;
   font-size: 2.1rem;
-  color: #181a1b;
+  color: var(--heading);
 }
 .art-meta {
-  color: #888;
+  color: var(--text-muted);
   font-size: 1.05rem;
   margin-bottom: 0.5rem;
 }
 .art-excerpt {
   display: block;
-  color: #1fa2ff;
+  color: var(--accent);
   font-weight: 500;
   margin-top: 0.3em;
 }
 .art-content {
   font-size: 1.08rem;
-  color: #222;
+  color: var(--text);
   margin-top: 1.5rem;
 }
 @media (max-width: 600px) {
@@ -346,7 +426,7 @@ footer {
   background: none;
   border: none;
   font-size: 2rem;
-  color: #fff;
+  color: var(--header-text);
   position: absolute;
   top: 0.5rem;
   right: 1.2rem;
@@ -361,7 +441,7 @@ footer {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: rgba(24,26,27,0.97);
+    background: var(--nav-overlay);
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -378,6 +458,11 @@ footer {
   .mobile-nav-toggle {
     display: block;
   }
+  /* Keep the theme toggle clear of the hamburger (which sits top-right) */
+  .theme-toggle {
+    right: auto;
+    left: 1.2rem;
+  }
   header {
     position: relative;
   }
@@ -386,26 +471,26 @@ footer {
 .tag-page {
   max-width: 800px;
   margin: 2.5rem auto;
-  background: #fff;
+  background: var(--surface);
   border-radius: 14px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  box-shadow: var(--shadow-lg);
   padding: 2.5rem 2rem 2rem 2rem;
 }
 .tag-page h1 {
   text-align: center;
   margin-bottom: 2rem;
   font-size: 2rem;
-  color: #181a1b;
+  color: var(--heading);
 }
 .tag-list .card {
   margin-bottom: 1.5rem;
 }
 
 .card, .art-entry, .tag-page {
-  background: #fff;
+  background: var(--surface);
 }
-.card h2, .art-header h1, .tag-page h1, .post-title{
-  color: #1fa2ff;
+.card h2, .art-header h1, .tag-page h1, .post-title {
+  color: var(--accent);
   font-weight: 700;
 }
 
@@ -414,8 +499,8 @@ pre, code {
   font-family: 'Fira Mono', 'Consolas', 'Menlo', monospace;
 }
 pre {
-  background: #f6f8fa;
-  color: #222;
+  background: var(--surface-alt);
+  color: var(--text);
   border-radius: 8px;
   padding: 1em 1.2em;
   overflow-x: auto;
@@ -423,8 +508,8 @@ pre {
   font-size: 1em;
 }
 code {
-  background: #f6f8fa;
-  color: #c7254e;
+  background: var(--surface-alt);
+  color: var(--code-text);
   border-radius: 4px;
   padding: 0.15em 0.4em;
   font-size: 0.98em;
