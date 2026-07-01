@@ -19,13 +19,23 @@
 # in the templates via {{ site.myvariable }}.
 
 title: instantfred
+tagline: Developer, illustrator & coffee enthusiast
 email: devfreddy@duck.com
+author: Freddy Ramírez
 description: >- # this means to ignore newlines until "baseurl:"
   Welcome to my digital space where I share my journey as a developer, showcase my illustrations,
    share coffee recipes, and document coding projects.
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: instantfred
-github_username: instantfred
+url: "https://instantfred.github.io" # the base hostname & protocol for your site
+
+# Used by jekyll-seo-tag for Open Graph / Twitter cards and structured data
+twitter:
+  username: instantfred
+  card: summary_large_image
+social:
+  name: Freddy Ramírez
+  links:
+    - https://github.com/instantfred
+    - https://twitter.com/instantfred
 
 include:
   - favicon.ico
@@ -36,6 +46,13 @@ plugins:
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-seo-tag
+
+# Default Open Graph image for pages that don't set their own
+defaults:
+  - scope:
+      path: ""
+    values:
+      image: /assets/images/profile.png
 
 # Exclude from processing.
 # The following items will not be processed, by default.
