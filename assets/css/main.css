@@ -1,5 +1,22 @@
 /* assets/main.css */
 
+/* Self-hosted Inter (latin) — no external font CDN, no render-blocking
+   request, no FOUT. Files live in /assets/fonts. */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/assets/fonts/inter-latin-400-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/assets/fonts/inter-latin-700-normal.woff2') format('woff2');
+}
+
 /* Theme tokens. Light is the default; dark overrides live below.
    The <html data-theme> attribute is set before paint by an inline
    script in the layout, so there is no flash of the wrong colors. */
@@ -205,8 +222,13 @@ footer {
   color: var(--accent-hover);
   transform: scale(1.15);
 }
-.profile-card .profile-links i {
+.profile-card .profile-links i,
+.profile-card .profile-links svg {
   vertical-align: middle;
+}
+.profile-card .profile-links svg {
+  width: 1.6rem;
+  height: 1.6rem;
 }
 
 .explore-grid {
