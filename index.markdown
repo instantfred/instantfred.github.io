@@ -40,7 +40,7 @@ permalink: /
   {% assign color_index = 0 %}
   {% for tag in site.tags %}
     {% assign color = tag_colors[color_index] %}
-    <a class="tag-label" style="background-color: {{ color }};" href="/tags/{{ tag[0] | uri_escape }}/">{{ tag[0] }}</a>
+    <a class="tag-label" style="background-color: {{ color }};" href="/tags/{{ tag[0] | slugify }}/">{{ tag[0] }}</a>
     {% assign color_index = color_index | plus: 1 %}
     {% if color_index == tag_colors.size %}{% assign color_index = 0 %}{% endif %}
   {% endfor %}
