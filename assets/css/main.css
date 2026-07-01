@@ -43,7 +43,6 @@
   --shadow-md: 0 2px 8px rgba(0, 0, 0, 0.06);
   --shadow-lg: 0 2px 12px rgba(0, 0, 0, 0.07);
   --shadow-accent: 0 4px 16px rgba(31, 162, 255, 0.13);
-  --shadow-pic: 0 1px 6px rgba(31, 162, 255, 0.12);
   --shadow-img: 0 2px 12px rgba(31, 162, 255, 0.10);
   color-scheme: light;
 }
@@ -71,7 +70,6 @@
   --shadow-md: 0 2px 8px rgba(0, 0, 0, 0.5);
   --shadow-lg: 0 2px 12px rgba(0, 0, 0, 0.55);
   --shadow-accent: 0 4px 16px rgba(0, 0, 0, 0.6);
-  --shadow-pic: 0 1px 6px rgba(0, 0, 0, 0.5);
   --shadow-img: 0 2px 12px rgba(0, 0, 0, 0.55);
   color-scheme: dark;
 }
@@ -169,72 +167,6 @@ footer {
 .icon-moon { display: inline-block; }
 :root[data-theme="dark"] .icon-sun { display: inline-block; }
 :root[data-theme="dark"] .icon-moon { display: none; }
-
-.profile-card {
-  max-width: 250px;
-  margin: 2rem auto 2.5rem auto;
-  background: var(--surface);
-  border-radius: 16px;
-  box-shadow: var(--shadow-lg);
-  padding: 2rem 1.5rem 1.5rem 1.5rem;
-  text-align: center;
-}
-.profile-card .profile-pic {
-  width: 210px;
-  height: 210px;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 3px solid var(--accent);
-  margin-bottom: 1rem;
-  box-shadow: var(--shadow-pic);
-}
-.profile-card h2 {
-  margin: 0.5rem 0 0.5rem 0;
-  font-size: 1.6rem;
-  color: var(--heading);
-}
-.profile-card p {
-  color: var(--text-soft);
-  font-size: 1.05rem;
-  margin-bottom: 1.2rem;
-}
-.profile-links a {
-  color: var(--accent);
-  font-weight: 500;
-  margin: 0 0.3rem;
-  text-decoration: none;
-}
-.profile-links a:hover {
-  color: var(--accent-hover);
-  text-decoration: underline;
-}
-
-.profile-card.large {
-  max-width: 480px;
-  padding: 2.5rem 2rem 2rem 2rem;
-}
-.profile-card .profile-links {
-  margin-top: 1.2rem;
-}
-.profile-card .profile-links a {
-  display: inline-block;
-  margin: 0 0.5rem;
-  font-size: 1.6rem;
-  color: var(--accent);
-  transition: color 0.2s, transform 0.2s;
-}
-.profile-card .profile-links a:hover {
-  color: var(--accent-hover);
-  transform: scale(1.15);
-}
-.profile-card .profile-links i,
-.profile-card .profile-links svg {
-  vertical-align: middle;
-}
-.profile-card .profile-links svg {
-  width: 1.6rem;
-  height: 1.6rem;
-}
 
 .explore-grid {
   display: grid;
@@ -374,8 +306,6 @@ footer {
 /* Responsive container and cards */
 @media (max-width: 700px) {
   .container,
-  .profile-card,
-  .profile-card.large,
   .art-entry,
   .tag-cloud {
     padding: 1rem 0.5rem;
@@ -384,10 +314,6 @@ footer {
   .explore-grid {
     grid-template-columns: 1fr 1fr;
     gap: 1rem;
-  }
-  .profile-card .profile-pic {
-    width: 120px;
-    height: 120px;
   }
   .art-main-image {
     max-height: 180px;
@@ -398,15 +324,9 @@ footer {
   .explore-grid {
     grid-template-columns: 1fr;
   }
-  .profile-card,
-  .profile-card.large,
   .art-entry,
   .tag-cloud {
     padding: 0.5rem 0.2rem;
-  }
-  .profile-card .profile-pic {
-    width: 80px;
-    height: 80px;
   }
   .art-main-image {
     max-height: 120px;
@@ -474,28 +394,10 @@ footer {
   }
 }
 
-.tag-page {
-  max-width: 800px;
-  margin: 2.5rem auto;
-  background: var(--surface);
-  border-radius: 14px;
-  box-shadow: var(--shadow-lg);
-  padding: 2.5rem 2rem 2rem 2rem;
-}
-.tag-page h1 {
-  text-align: center;
-  margin-bottom: 2rem;
-  font-size: 2rem;
-  color: var(--heading);
-}
-.tag-list .card {
-  margin-bottom: 1.5rem;
-}
-
-.card, .art-entry, .tag-page {
+.card, .art-entry {
   background: var(--surface);
 }
-.card h2, .art-header h1, .tag-page h1, .post-title {
+.art-header h1 {
   color: var(--accent);
   font-weight: 700;
 }
