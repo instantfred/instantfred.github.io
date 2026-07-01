@@ -1,0 +1,35 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  htmlproofer:
+    name: Build and check links
+    runs-on: ubuntu-latest
+    env:
+      # HTML files contain UTF-8 (em-dashes, ©, etc.); force a UTF-8 locale so
+      # Nokogiri parses them instead of skipping files under a C/ASCII locale.
+      LANG: C.UTF-8
+      LC_ALL: C.UTF-8
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "4.0.5"
+          bundler-cache: true
+
+      - name: Build with Jekyll
+        run: bundle exec jekyll build
+        env:
+          JEKYLL_ENV: production
+
+      - name: Check HTML with html-proofer
+        # External links are skipped to keep CI deterministic (they fail on
+        # transient outages / rate limits). Drop --disable-external to check them.
+        run: bundle exec htmlproofer ./_site --disable-external --no-enforce-https
