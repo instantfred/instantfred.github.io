@@ -1,14 +1,15 @@
 ---
 layout: default
 ---
-
+{%- assign cat = site.data.hobby_categories | where: "slug", page.category | first -%}
 <article class="art-entry">
-  {% if page.image %}
+  {% if page.image and page.image != site.og_default_image %}
     <div class="art-image-wrapper">
       <img src="{{ page.image }}" alt="{{ page.title }}" class="art-main-image">
     </div>
   {% endif %}
   <header class="art-header">
+    {% if cat %}<a class="hobby-badge" href="/hobbies/#{{ cat.slug }}">{{ cat.name }}</a>{% endif %}
     <h1>{{ page.title }}</h1>
     <p class="art-meta">
       <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %d, %Y" }}</time>
@@ -18,4 +19,4 @@ layout: default
   <div class="art-content">
     {{ content }}
   </div>
-</article> 
+</article>

@@ -46,19 +46,12 @@ permalink: /
     </picture>
     <span class="explore-label">Projects</span>
   </a>
-  <a href="/art/" class="explore-card">
+  <a href="/hobbies/" class="explore-card">
     <picture>
       <source srcset="/assets/images/explore-art.webp" type="image/webp">
-      <img src="/assets/images/explore-art.jpg" alt="Art" width="680" height="453" loading="lazy" decoding="async">
+      <img src="/assets/images/explore-art.jpg" alt="Hobbies" width="680" height="453" loading="lazy" decoding="async">
     </picture>
-    <span class="explore-label">Illustrations</span>
-  </a>
-  <a href="/recipes/" class="explore-card">
-    <picture>
-      <source srcset="/assets/images/explore-recipes.webp" type="image/webp">
-      <img src="/assets/images/explore-recipes.jpg" alt="Recipes" width="680" height="453" loading="lazy" decoding="async">
-    </picture>
-    <span class="explore-label">Recipes</span>
+    <span class="explore-label">Hobbies</span>
   </a>
 </div>
 

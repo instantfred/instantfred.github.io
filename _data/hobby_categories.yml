@@ -1,0 +1,12 @@
+# Display order and labels for hobby categories.
+# The /hobbies/ landing only renders a category that has at least one entry,
+# so new categories (e.g. board-games) appear automatically once you add a post.
+- slug: coffee
+  name: Specialty Coffee
+  blurb: Brew guides, tasting notes and recipes from my coffee rabbit hole.
+- slug: board-games
+  name: Board Games
+  blurb: Sessions, strategy and the occasional homemade tool.
+- slug: illustrations
+  name: Illustrations
+  blurb: Sketches and digital pieces I make for fun.

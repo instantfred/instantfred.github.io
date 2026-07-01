@@ -1,7 +1,8 @@
 ---
 title: Coffee Latte
 date: 2025-07-08
-layout: default
+layout: hobby
+category: coffee
 excerpt: "A simple and delicious coffee latte recipe."
 ---
 

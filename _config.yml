@@ -47,7 +47,10 @@ plugins:
   - jekyll-sitemap
   - jekyll-seo-tag
 
-# Default Open Graph image for pages that don't set their own
+# Default Open Graph image for pages that don't set their own.
+# og_default_image mirrors the value below so templates can tell an
+# inherited default apart from a real per-entry image.
+og_default_image: /assets/images/profile.jpg
 defaults:
   - scope:
       path: ""
@@ -79,9 +82,8 @@ collections:
   projects:
     output: true
     permalink: /:collection/:name/
-  recipes:
+  # Hobbies groups coffee, illustrations and board games in one section;
+  # each entry sets `category`. See _data/hobby_categories.yml for labels.
+  hobbies:
     output: true
-    permalink: /:collection/:name/
-  art:
-    output: true
-    permalink: /:collection/:name/
+    permalink: /hobbies/:name/

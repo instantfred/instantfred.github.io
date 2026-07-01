@@ -84,32 +84,22 @@ github_url: https://github.com/username/repo-name
 ---
 ```
 
-### Recipes
+### Hobbies
 
-Add recipes in the `_recipes/` directory with the filename format: `recipe-name.md`
-
-**Front matter template:**
-```yaml
----
-title: Recipe Name
-date: YYYY-MM-DD
-layout: default
-excerpt: "Brief description of your recipe"
----
-```
-
-### Art (Future Collection)
-
-To add art pieces, create files in the `_art/` directory (you may need to create this directory first) with the filename format: `artwork-name.md`
+Coffee, board games and illustrations all live in the `_hobbies/` collection.
+Each entry sets a `category` (`coffee`, `board-games` or `illustrations`); the
+`/hobbies/` page groups entries by category and only shows a category once it
+has at least one entry. Category labels/order live in `_data/hobby_categories.yml`.
 
 **Front matter template:**
 ```yaml
 ---
-title: Artwork Title
+title: Entry Title
 date: YYYY-MM-DD
-layout: art
-excerpt: "Brief description of your artwork"
-image: /assets/images/artwork-name.jpg
+layout: hobby
+category: coffee   # or board-games, illustrations
+excerpt: "Brief description"
+image: /assets/images/optional-hero.jpg   # optional; shown as hero + card image
 ---
 ```
 
@@ -117,10 +107,11 @@ image: /assets/images/artwork-name.jpg
 
 - `_posts/` - Blog posts
 - `_projects/` - Project showcase
-- `_recipes/` - Coffee recipes and brewing guides
+- `_hobbies/` - Coffee, board games and illustrations (grouped by `category`)
+- `_data/` - Data files (e.g. `hobby_categories.yml`)
 - `_layouts/` - HTML templates
-- `_includes/` - Reusable HTML components
-- `assets/` - CSS, images, and other static files
+- `_plugins/` - Site generators (e.g. per-tag pages)
+- `assets/` - CSS, fonts, images, and other static files
 - `_config.yml` - Site configuration
 
 ## Deployment
