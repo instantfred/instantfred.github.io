@@ -756,6 +756,81 @@ footer {
   color: #fff;
 }
 
+/* About page: experience timeline */
+.timeline {
+  position: relative;
+  margin: 1.2rem 0 0.5rem;
+  padding-left: 1.6rem;
+  border-left: 2px solid var(--border);
+}
+.timeline-item {
+  position: relative;
+  padding-bottom: 1.8rem;
+}
+.timeline-item:last-child {
+  padding-bottom: 0;
+}
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: calc(-1.6rem - 6px);
+  top: 0.3rem;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 4px var(--bg);
+}
+.timeline-role {
+  font-weight: 700;
+  color: var(--heading);
+  font-size: 1.1rem;
+}
+.timeline-org {
+  color: var(--accent);
+  font-weight: 600;
+}
+.timeline-meta {
+  color: var(--text-muted);
+  font-size: 0.88rem;
+  margin: 0.1rem 0 0.5rem;
+}
+.timeline-item ul {
+  margin: 0.3rem 0 0;
+  padding-left: 1.1rem;
+  color: var(--text-soft);
+  line-height: 1.6;
+}
+.timeline-item li {
+  margin-bottom: 0.2rem;
+}
+
+/* About page: skills */
+.skill-groups {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1.4rem;
+  margin-top: 1.2rem;
+}
+.skill-group h3 {
+  font-size: 1rem;
+  color: var(--heading);
+  margin: 0 0 0.6rem;
+}
+.skill-group .chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+.skill-chip {
+  padding: 0.3em 0.8em;
+  border-radius: 999px;
+  background: var(--accent-tint);
+  color: var(--accent);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
 /* Code block styling */
 pre, code {
   font-family: 'Fira Mono', 'Consolas', 'Menlo', monospace;
