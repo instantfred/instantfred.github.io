@@ -13,10 +13,12 @@ permissions:
   pages: write
   id-token: write
 
-# Allow one concurrent deployment; cancel in-progress runs of the same group
+# Allow one concurrent deployment. Do NOT cancel an in-progress run — a
+# canceled Pages deployment fails ("Deployment failed, try again later"),
+# so queue new runs instead and let production deploys finish.
 concurrency:
   group: pages
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   build:
